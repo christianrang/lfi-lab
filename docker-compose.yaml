@@ -1,0 +1,18 @@
+version: '3'
+
+services: 
+
+  nginx:
+    container_name: lfi-lab
+    restart: always
+    build: ./infra/nginx
+    networks:
+      - apinetwork
+    volumes:
+      - "./php:/var/www/html"
+    ports:
+      - "3000:80"
+
+networks:
+  apinetwork:
+    driver: bridge
