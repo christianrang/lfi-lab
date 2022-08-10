@@ -5,8 +5,8 @@ echo "
  <h1>Something is not right with this page...</h1>
 
 <p>
-  You may have never noticed, but URLs are the most consistent way a user provides input to a webserver. 
-  If inputs from users are not carefully guarded it can lead to various types of attacks. 
+  URLs are the most consistent way a user provides input to a webserver. 
+  If inputs from users are not carefully guarded it can lead to various types of vulnerabilities. 
   In this case directly manipulating the URL allows an attack called Local File Inclusion or LFI.
   This allows an attacker to see files stored locally on the webserver.
 </p>
@@ -20,7 +20,7 @@ In Linux, the user is normally www-data, but could be anyone, even root!
 </p>
 
 <p>
-If an attacker is able to get a malicious executable on to the victim machine, they can sometimes useLFI to execute the file.
+If an attacker is able to get a malicious executable on to the victim machine, they can sometimes use LFI to execute the file.
 This combo is useful in gaining remote code execution and popping reverse shells.
 </p>
 
@@ -58,9 +58,8 @@ Change the 'include.php' for a path to another file we know exists on the system
 </p>
 <p> A common example of this would be to try <pre> ?page=/etc/passwd
 </pre>
-You can read more about /etc/passwd <a href='https://linuxize.com/post/etc-passwd-file/'>here.</a> A quick summary is this file stores information about the users on the machine, including their home directory, startup shell, and UID/GUID.
+You can read more about /etc/passwd <a href='https://linuxize.com/post/etc-passwd-file/'>here</a>. This file stores information about the users on the machine, including their home directory, startup shell, and UID/GUID.
 With the ability to read the file we can even find a comment left by the user in the /etc/passwd file!
-Of course
 </p>
 
 <h2>Examples of files to look for on Linux</h2>
