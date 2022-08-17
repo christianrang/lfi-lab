@@ -37,7 +37,7 @@ If you look in the php directory of this project you can see the file being incl
 
 You can also see the file be connecting to the victim machine by running
 <pre>
-  docker-compose exec -it lfi-lab bash
+  docker-compose exec -it nginx bash
 </pre>
 
 Running this command will give you a shell on the victim machine, so you can gain insight to what a blue team or systems administrator might see.
@@ -56,8 +56,7 @@ Both by the file extension and a little cheating and looking inside the system.
 But how would we test this for LFI without cheating?
 Change the 'include.php' for a path to another file we know exists on the system. Common examples of files on Linux can be found beneath the heading 'Examples of files to look for on Linux'.
 </p>
-<p> A common example of this would be to try <pre> ?page=/etc/passwd
-</pre>
+<p> A common example of this would be to try <pre> ?page=/etc/passwd</pre>
 You can read more about /etc/passwd <a href='https://linuxize.com/post/etc-passwd-file/'>here</a>. This file stores information about the users on the machine, including their home directory, startup shell, and UID/GUID.
 With the ability to read the file we can even find a comment left by the user in the /etc/passwd file!
 </p>
